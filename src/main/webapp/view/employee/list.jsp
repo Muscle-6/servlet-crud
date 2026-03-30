@@ -66,7 +66,7 @@
             <td><%= emp.getSalary() %></td>
             <td><%= "N".equals(emp.getRetireYn()) ? "재직" : "퇴직" %></td>
             <td>
-                <a href="<%= contextPath %>/employees/detail?empId=<%= emp.getEmpId() %>">상세</a>
+                <a href="<%= contextPath %>/employees/detail?search=true&empId=<%= emp.getEmpId() %>">상세</a>
                 &nbsp;
                 <a href="<%= contextPath %>/employees/edit?empId=<%= emp.getEmpId() %>">수정</a>
                 &nbsp;

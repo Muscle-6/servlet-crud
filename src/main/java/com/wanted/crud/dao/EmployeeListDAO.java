@@ -1,6 +1,4 @@
 package com.wanted.crud.dao;
-
-import com.wanted.crud.dto.EmployeeDTO;
 import com.wanted.crud.dto.EmployeeListDTO;
 import com.wanted.crud.global.JDBCTemplate;
 
