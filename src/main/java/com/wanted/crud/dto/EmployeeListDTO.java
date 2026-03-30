@@ -1,29 +1,32 @@
 package com.wanted.crud.dto;
 
-import java.sql.Date;
+public class EmployeeListDTO {
 
-public class EmployeeDTO {
-
-    private String empId;
+    private int empId;
     private String empName;
     private String email;
     private String phone;
-    private String deptCode;
     private String deptTitle;
-    private String jobCode;
     private String jobName;
-    private int salary;
-    private Date hireDate;
+    private double salary;
     private String entYn;
 
-    public EmployeeDTO() {
+    public EmployeeListDTO(int empId, String empName, String email, String phone, String deptTitle, String jobName, double salary, String entYn) {
+        this.empId=empId;
+        this.empName=empName;
+        this.email=email;
+        this.phone=phone;
+        this.deptTitle=deptTitle;
+        this.jobName=jobName;
+        this.salary=salary;
+        this.entYn=entYn;
     }
 
-    public String getEmpId() {
+    public int getEmpId() {
         return empId;
     }
 
-    public void setEmpId(String empId) {
+    public void setEmpId(int empId) {
         this.empId = empId;
     }
 
@@ -51,28 +54,12 @@ public class EmployeeDTO {
         this.phone = phone;
     }
 
-    public String getDeptCode() {
-        return deptCode;
-    }
-
-    public void setDeptCode(String deptCode) {
-        this.deptCode = deptCode;
-    }
-
     public String getDeptTitle() {
         return deptTitle;
     }
 
     public void setDeptTitle(String deptTitle) {
         this.deptTitle = deptTitle;
-    }
-
-    public String getJobCode() {
-        return jobCode;
-    }
-
-    public void setJobCode(String jobCode) {
-        this.jobCode = jobCode;
     }
 
     public String getJobName() {
@@ -83,27 +70,19 @@ public class EmployeeDTO {
         this.jobName = jobName;
     }
 
-    public int getSalary() {
+    public double getSalary() {
         return salary;
     }
 
-    public void setSalary(int salary) {
+    public void setSalary(double salary) {
         this.salary = salary;
     }
 
-    public Date getHireDate() {
-        return hireDate;
-    }
-
-    public void setHireDate(Date hireDate) {
-        this.hireDate = hireDate;
-    }
-
-    public String getEntYn() {
+    public String getRetireYn() {
         return entYn;
     }
 
-    public void setEntYn(String entYn) {
+    public void setRetireYn(String retireYn) {
         this.entYn = entYn;
     }
 }
