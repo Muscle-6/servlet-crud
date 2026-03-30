@@ -11,26 +11,18 @@ import java.io.IOException;
 
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
-
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setCharacterEncoding("UTF-8");
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
 
         String userId = req.getParameter("userId");
-        String password = req.getParameter("password");
+        String userPwd = req.getParameter("userPwd");
 
-        // DB 검증 없이 무조건 성공
-        // userId가 비어 있으면 화면 표시용 기본값만 넣어줌
-        if (userId == null || userId.isBlank()) {
-            userId = "guest";
+        if ("1234".equals(userPwd)) {
+            HttpSession session = req.getSession();
+            session.setAttribute("loginUser", userId);
+            resp.sendRedirect(req.getContextPath() + "/");
+        } else {
+            resp.sendRedirect(req.getContextPath() + "/");
         }
-
-        HttpSession session = req.getSession();
-        session.setAttribute("loginUser", userId);
-
-        // 필요하면 표시용으로도 저장 가능
-        session.setAttribute("loginMessage", "로그인 성공");
-
-        resp.sendRedirect(req.getContextPath() + "/");
     }
 }
