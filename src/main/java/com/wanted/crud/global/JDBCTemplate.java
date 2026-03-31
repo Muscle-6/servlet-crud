@@ -70,4 +70,11 @@ public class JDBCTemplate {
             throw new RuntimeException(e);
         }
     }
+
+    public static void commit(Connection conn) {
+    }
+
+    public static void rollback(Connection conn) {
+        
+    }
 }
